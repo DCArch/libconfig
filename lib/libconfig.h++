@@ -237,6 +237,8 @@ class LIBCONFIGXX_API Setting
   bool lookupValue(const char *name, bool &value) const;
   bool lookupValue(const char *name, int &value) const;
   bool lookupValue(const char *name, unsigned int &value) const;
+  bool lookupValue(const char *name, long &value) const;
+  bool lookupValue(const char *name, unsigned long &value) const;
   bool lookupValue(const char *name, long long &value) const;
   bool lookupValue(const char *name, unsigned long long &value) const;
   bool lookupValue(const char *name, double &value) const;
@@ -251,6 +253,13 @@ class LIBCONFIGXX_API Setting
   { return(lookupValue(name.c_str(), value)); }
 
   inline bool lookupValue(const std::string &name, unsigned int &value) const
+  { return(lookupValue(name.c_str(), value)); }
+
+  inline bool lookupValue(const std::string &name, long &value) const
+  { return(lookupValue(name.c_str(), value)); }
+
+  inline bool lookupValue(const std::string &name,
+                          unsigned long &value) const
   { return(lookupValue(name.c_str(), value)); }
 
   inline bool lookupValue(const std::string &name, long long &value) const
@@ -531,6 +540,8 @@ class LIBCONFIGXX_API Config
   bool lookupValue(const char *path, bool &value) const;
   bool lookupValue(const char *path, int &value) const;
   bool lookupValue(const char *path, unsigned int &value) const;
+  bool lookupValue(const char *path, long &value) const;
+  bool lookupValue(const char *path, unsigned long &value) const;
   bool lookupValue(const char *path, long long &value) const;
   bool lookupValue(const char *path, unsigned long long &value) const;
   bool lookupValue(const char *path, double &value) const;
@@ -545,6 +556,13 @@ class LIBCONFIGXX_API Config
   { return(lookupValue(path.c_str(), value)); }
 
   inline bool lookupValue(const std::string &path, unsigned int &value) const
+  { return(lookupValue(path.c_str(), value)); }
+
+  inline bool lookupValue(const std::string &path, long &value) const
+  { return(lookupValue(path.c_str(), value)); }
+
+  inline bool lookupValue(const std::string &path,
+                          unsigned long &value) const
   { return(lookupValue(path.c_str(), value)); }
 
   inline bool lookupValue(const std::string &path, long long &value) const
