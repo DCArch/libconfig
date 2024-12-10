@@ -584,6 +584,20 @@ bool Config::lookupValue(const char *path, unsigned int &value) const
 
 // ---------------------------------------------------------------------------
 
+bool Config::lookupValue(const char *path, long &value) const
+{
+  CONFIG_LOOKUP_NO_EXCEPTIONS(path, long, value);
+}
+
+// ---------------------------------------------------------------------------
+
+bool Config::lookupValue(const char *path, unsigned long &value) const
+{
+  CONFIG_LOOKUP_NO_EXCEPTIONS(path, unsigned long, value);
+}
+
+// ---------------------------------------------------------------------------
+
 bool Config::lookupValue(const char *path, long long &value) const
 {
   CONFIG_LOOKUP_NO_EXCEPTIONS(path, long long, value);
@@ -1024,6 +1038,20 @@ bool Setting::lookupValue(const char *name, int &value) const
 bool Setting::lookupValue(const char *name, unsigned int &value) const
 {
   SETTING_LOOKUP_NO_EXCEPTIONS(name, unsigned int, value);
+}
+
+// ---------------------------------------------------------------------------
+
+bool Setting::lookupValue(const char *name, long &value) const
+{
+  SETTING_LOOKUP_NO_EXCEPTIONS(name, long, value);
+}
+
+// ---------------------------------------------------------------------------
+
+bool Setting::lookupValue(const char *name, unsigned long &value) const
+{
+  SETTING_LOOKUP_NO_EXCEPTIONS(name, unsigned long, value);
 }
 
 // ---------------------------------------------------------------------------
